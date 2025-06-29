@@ -182,7 +182,7 @@ export default function Home() {
                 </span>
               </motion.div>
               
-              <div className="h-48 relative flex items-center justify-center">
+              <div className="min-h-[160px] sm:min-h-[160px] relative flex items-center justify-center py-6 sm:py-8">
                 <AnimatePresence mode="wait">
                   <motion.h1
                     key={currentTaglineIndex}
@@ -190,7 +190,7 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 1, ease: [0.645, 0.045, 0.355, 1] }}
-                    className="text-5xl sm:text-6xl font-bold text-gray-900 gradient-text leading-relaxed absolute inset-0 flex items-center justify-center"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 gradient-text leading-relaxed absolute inset-0 flex items-center justify-center px-4"
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
                   >
@@ -218,7 +218,7 @@ export default function Home() {
               </div>
 
               <motion.p 
-                className="max-w-2xl mx-auto text-xl text-gray-600 mb-12"
+                className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 mb-8 sm:mb-12 px-4 sm:px-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: [0.645, 0.045, 0.355, 1], delay: 0.4 }}
@@ -231,33 +231,33 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: [0.645, 0.045, 0.355, 1], delay: 0.6 }}
-                className="max-w-md mx-auto"
+                className="max-w-md mx-auto w-full px-4 sm:px-0"
               >
-                <form onSubmit={handleSubmit} className="flex gap-2">
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent hover-glow"
+                    className="flex-1 px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent hover-glow"
                     required
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
                   />
                   <button 
                     type="submit"
-                    className="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-all duration-300 flex items-center hover-glow"
+                    className="w-full sm:w-auto bg-primary-500 text-white px-4 sm:px-6 py-2 text-xs sm:text-sm rounded-lg hover:bg-primary-600 transition-all duration-300 flex items-center justify-center hover-glow"
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
                   >
-                    Join Waitlist <ArrowRight className="ml-2 h-4 w-4" />
+                    Join Waitlist <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                   </button>
                 </form>
                 {submitted && (
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-green-600 mt-2"
+                    className="text-green-600 mt-2 text-xs sm:text-sm"
                   >
                     Thanks! We&apos;ll keep you updated on our progress.
                   </motion.p>
@@ -266,7 +266,7 @@ export default function Home() {
 
               <motion.button
                 onClick={scrollToNextSection}
-                className="mt-16 inline-flex items-center gap-2 text-gray-500 hover:text-primary-600 transition-colors"
+                className="mt-8 sm:mt-16 inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-500 hover:text-primary-600 transition-colors"
                 animate={{
                   y: [0, 10, 0],
                 }}
@@ -279,7 +279,7 @@ export default function Home() {
                 onMouseLeave={() => setIsHovering(false)}
               >
                 Scroll to learn more
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown className="h-3 w-3 sm:h-4 sm:w-4" />
               </motion.button>
             </div>
           </div>
@@ -364,7 +364,7 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-          </div>
+        </div>
         </section>
 
         {/* Development Status */}
@@ -374,7 +374,7 @@ export default function Home() {
           
           <div className="max-w-4xl mx-auto px-4 text-center relative">
             <motion.h2 
-              className="text-3xl font-bold text-gray-900 mb-4 gradient-text"
+              className="text-2xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 gradient-text"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -383,7 +383,7 @@ export default function Home() {
               Current Development Status
             </motion.h2>
             <motion.p 
-              className="text-lg text-gray-600 mb-8"
+              className="text-sm sm:text-base md:text-lg text-gray-600 mb-8"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -394,7 +394,7 @@ export default function Home() {
               working hard to bring you a tool that will revolutionize how you handle recruitment.
             </motion.p>
             <motion.div 
-              className="inline-flex items-center gap-2 text-primary-600 hover-glow px-4 py-2 rounded-full"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm text-primary-600 hover-glow px-4 py-2 rounded-full"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -410,7 +410,7 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-      </div>
+    </div>
     </>
   );
 }
